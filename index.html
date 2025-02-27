@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="index.js" defer></script>
+    <title>Calculadora con JS</title>
+  </head>
+  <body class="flex flex-col justify-center items-center h-screen">
+    <div class="flex flex-col items-center bg-gray-200 w-[350px] ">
+      <div class="w-[300px] bg-white m-5">
+        <p id="total-screen" class="p-4"></p>
+        <p id="partial-screen" class="p-4"></p>
+      </div>
+      <div id="calculator-keys" class="grid grid-cols-4  w-[300px] p-3 m-5 gap-5 place-items-center" >
+        <button class="bg-gray-300 w-full">1</button>
+        <button class="bg-gray-300 w-full">2</button>
+        <button class="bg-gray-300 w-full">3</button>
+        <button class="bg-gray-300 w-full">4</button>
+        <button class="bg-gray-300 w-full">5</button>
+        <button class="bg-gray-300 w-full">6</button>
+        <button class="bg-gray-300 w-full">7</button>
+        <button class="bg-gray-300 w-full">8</button>
+        <button class="bg-gray-300 w-full">9</button>
+        <button class="bg-gray-300 w-full">0</button>
+        <button class="bg-gray-300 w-full">=</button>
+        <button class="bg-gray-300 w-full">DEL</button>
+        <button class="bg-gray-300 w-full">+</button>
+        <button class="bg-gray-300 w-full">-</button>
+        <button class="bg-gray-300 w-full">*</button>
+        <button class="bg-gray-300 w-full">/</button>
+      </div>
+    </div>
+  </body>
+</html>
