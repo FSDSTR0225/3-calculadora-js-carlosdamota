@@ -1,16 +1,4 @@
-const totalScreen = document.getElementById("total-screen");
-const partialScreen = document.getElementById("partial-screen");
-const calculatorKeys = document.querySelectorAll('button')
-const screenToggle = document.querySelector("#screen")
-
-screenToggle.classList.add("bg-gray-900")
-screenToggle.classList.add("text-gray-700")
-
-
-const operators = ["+", "-","*", "/","X"] 
-//["=","DEL"]
-
-
+//realzacion de los calculos en ralacion al operador
 const calculate = (number, operator, number2) => {
     const numA = Number(number)
     const numB = Number(number2)
@@ -30,6 +18,7 @@ const calculate = (number, operator, number2) => {
     return (operations[operator](numA, numB)).toFixed(2)
 }
 
+//limpia la pantalla
 const clearScreen = () => {
     number = ""
     number2 = ""
@@ -40,6 +29,7 @@ const clearScreen = () => {
     totalScreen.textContent = "0"
 }
 
+//en relacion si hay operador y 2 numeros llama ala funcion calculate  retorna el resultado
 const calculateOperation = () => {
     if(number && operator && number2){
         calculateTotal = calculate(number,operator,number2)
@@ -54,6 +44,7 @@ const calculateOperation = () => {
     }
 }
 
+//añade un operador simpre que el number no este vacio y no haya un operador
 const includeOperator = (btnValue) =>{
 if( !operator   && number){
     if(completOperation){
@@ -65,6 +56,9 @@ if( !operator   && number){
     totalScreen.textContent = completOperation}
 }
 
+//si hay operador permite generar el number2 y actualizar la pantalla
+//si no hay operador ni number a añade el valor de numBtn number
+//solo se permite la coma si no hay coma
 processCalculation = (isOperator, numBtn, hasDotNum, hasDotNum2) => {
     if( !operator && isOperator && number){
         if(completOperation){
@@ -101,48 +95,3 @@ processCalculation = (isOperator, numBtn, hasDotNum, hasDotNum2) => {
     console.log(operator)
     console.log(number2)
 }
-
-
-
-
-let number = ""
-let number2 = ""
-let operator = ""
-let completOperation = ""
-let calculateTotal
-function hadleClick(event) {
-   const btnValue = event.target.textContent
-   const hasDotNum = number.split("").includes(".") 
-    const hasDotNum2 = number2.split("").includes(".")
-   const numBtn = !isNaN(btnValue) || btnValue === "." ? btnValue : ""
-   const isEqual = btnValue === "="
-   const isClear = btnValue === "C"
-   const isOperator = operators.some(operator => btnValue.includes(operator)) 
-    if (isClear) clearScreen(event)
-    
-    if(isEqual && number && operator && number2)calculateOperation(event)
-
-      if(isOperator && number) includeOperator(btnValue)
-
-    processCalculation(isOperator, numBtn, hasDotNum, hasDotNum2)
-   
-}
-const handleKeyDown = document.querySelector("#on-off")
-handleKeyDown.addEventListener("click", () => {
-    handleKeyDown.textContent === "OFF" ? handleKeyDown.textContent = "ON" : handleKeyDown.
-    textContent = "OFF"
-    if(handleKeyDown.textContent === "ON"){
-        screenToggle.classList.remove("bg-gray-900")
-screenToggle.classList.remove("text-gray-700")
-screenToggle.classList.add("bg-green-900")
-
-    calculatorKeys.forEach(button => button.addEventListener('click', hadleClick));
-    }else{
-        totalScreen.textContent = "0"
-        partialScreen.textContent = "0"
-        screenToggle.classList.remove("bg-green-900")
-        screenToggle.classList.add("bg-gray-900")
-        screenToggle.classList.add("text-gray-700")
-        calculatorKeys.forEach(button => button.removeEventListener('click', hadleClick));
-    }
-})
