@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./scripts/utils.js"defer></script>
+    <script src="./scripts/index.js" defer></script>
+    <title>Calculadora con JS</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+  </head>
+  <body class="flex flex-col justify-center items-center h-screen">
+    <div class="flex flex-col items-center bg-gray-700 p-4  w-64 rounded-[24px] shadow shadow-gray-500 mx-auto shadow-2xl border border-gray-700">
+      <div id="screen" class="w-full text-green-300 mt-4 mb-5 h-22 text-right shadow shadow-gray-500 shadow-inner p-1 rounded h-[90px] rounded-md border border-green-700">
+        <p id="total-screen" class=" screen text-3xl pr-3 overflow-hidden text-ellipsis whitespace-nowrap">0</p>
+        <p id="partial-screen" class=" screen text-4xl pr-3 overflow-hidden text-ellipsis whitespace-nowrap"></p>
+      </div>
+      <div id="calculator-keys" class="grid grid-cols-5  w-full  mt-2 mb-2 gap-2 place-items-center" >
+        <button class=" bg-gray-300 shadow active:scale95 w-full rounded border border-gray-500">7</button>
+        <button class=" bg-gray-300 hover:bg-gray-400 active:scale95 w-full rounded">8</button>
+        <button class=" bg-gray-300 hover:bg-gray-400 shadow active:scale95 w-full rounded">9</button>
+        <button class=" bg-red-500 hover:bg-red-400 shadow active:scale95 w-full rounded">C</button>
+        <button id="on-off" class=" bg-gray-400 hover:bg-green-400 shadow active:scale95 w-full rounded">OFF</button>
+        <button class=" bg-gray-300 hover:bg-gray-400 shadow active:scale95 w-full rounded">4</button>
+        <button class=" bg-gray-300 hover:bg-gray-400 shadow active:scale95 w-full rounded">5</button>
+        <button class=" bg-gray-300 hover:bg-gray-400 shadow active:scale95 w-full rounded">6</button>
+        <button class=" bg-orange-500 hover:bg-orange-400 shadow active:scale95 w-full rounded">X</button>
+        <button class=" bg-orange-500 hover:bg-orange-400 shadow active:scale95 w-full rounded">/</button>
+        <button class=" bg-gray-300 hover:bg-gray-400 shadow active:scale95 w-full rounded">1</button>
+        <button class=" bg-gray-300 hover:bg-gray-400 shadow active:scale95 w-full rounded">2</button>
+        <button class=" bg-gray-300 hover:bg-gray-400 shadow active:scale95 w-full  rounded ">3</button>
+        <button class=" bg-orange-500 hover:bg-orange-400 shadow active:scale95 w-full rounded">+</button>
+        <button class=" bg-orange-500 hover:bg-orange-400 shadow active:scale95 w-full rounded">-</button>
+
+        <button class="bg-blue-500 hover:bg-blue-400 shadow active:scale95 w-full  rounded">.</button>
+        <button class=" bg-gray-300 hover:bg-gray-400 shadow active:scale95 w-full rounded">0</button>
+        <button class=" bg-gray-300 hover:bg-gray-400 shadow active:scale95 w-full rounded">00</button>
+        <button class=" bg-blue-500 hover:bg-blue-400 shadow active:scale95 w-full rounded col-span-2">=</button>
+
+      </div>
+    </div>
+  </body>
+</html>
